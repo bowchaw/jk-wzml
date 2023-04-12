@@ -1,0 +1,7 @@
+#!/bin/bash
+if
+[[ "$1" =~ "folders" ]]; then
+gdown --folder --fuzzy "$1" 2>&1 | grep -oP 'src\/app\/\K.*?.*'
+else
+gdown --fuzzy "$1" 2>&1 | grep -oP 'src\/app\/\K.*?.*'
+fi

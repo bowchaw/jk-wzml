@@ -1,0 +1,1 @@
+aria2c -x 12 "$1"| grep -oP '[a-z]: \/usr\/src\/app\/\K.*?.*'
