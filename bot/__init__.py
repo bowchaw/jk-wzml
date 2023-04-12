@@ -867,6 +867,7 @@ if ospath.exists('categories.txt'):
 PORT = environ.get('PORT', '')
 Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{PORT}", shell=True)
 Popen(["python3", "-m", "http.server"])
+srun(["rm", "-rf", "config.env"])
 alive = Popen(["python3", "alive.py"])
 srun(["qbittorrent-nox", "-d", "--profile=."])
 if not ospath.exists('.netrc'):
